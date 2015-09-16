@@ -1,0 +1,76 @@
+% Tested with full TeX Live 2013
+
+\documentclass{beamer}
+\mode<presentation>
+
+% A sequence of packages I will never remember...
+\usepackage{beamerthemesplit}
+\usepackage[utf8x]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{xcolor,colortbl}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,chains,fit,shapes,calc}
+
+% Make nice HTML-linked citations with \myhcite
+% Use your favorite color. Here it's "oldbrick"
+\newcommand{\myhcite}[2]{\href{#1}{{\color{oldbrick}#2}}}
+
+% Automatically displays the PDF in fullscreen mode
+% To uncomment before D Day...
+% \hypersetup{pdfpagemode=FullScreen}
+
+\mode<presentation>
+{ \usetheme{LRI}
+}
+
+% Define the title page commands
+\title{Towards a formal semantics of the TESL specification language}
+\subtitle{\scriptsize 3rd International Workshop on The Globalization of Modeling Languages, 2015}
+\author{Hai Nguyen Van \quad Thibaut Balabonski \quad Frédéric Boulanger\\Safouan Taha \quad Benoît Valiron \quad Burkhart Wolff \quad Lina Ye}
+\institute{
+  \includegraphics[height=1.3cm]{img/upsud.png}\quad\quad
+  \includegraphics[height=1.3cm]{img/centralesupelec.png}\quad\quad
+  \includegraphics[height=1.3cm]{img/lri.png}
+}
+\date{}
+
+
+\begin{document}
+
+\frame[plain]{
+  \titlepage
+}
+
+\frame{
+  \frametitle{Table of contents}
+  \tableofcontents
+}
+
+\section{Introduction}
+
+\section{Time and causality in TESL}
+
+\section{Semantics and formal approaches}
+
+\section{Conclusion}
+
+\frame{
+   \frametitle{References}
+
+   \begin{scriptsize}
+     \textbf{References}
+     \begin{description}
+     \item [DHK14] V. D'Silva, L. Haller, D. Kroening: Abstract satisfaction. POPL 2014: 139-150
+     \item [Cou81] P. Cousot. Semantic foundations of program analysis. In: Program Flow Analysis: Theory and Applications Edited by:S S Muchnick, N D Jones. 303-342 Prentice-Hall
+     \end{description}
+   \end{scriptsize}
+}
+\end{document}

@@ -1,0 +1,69 @@
+% Copyright 2015 by Hai Nguyen Van
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+% Unofficial Beamer theme for Laboratoire de Recherche en Informatique (LRI)
+% Forked from Frankfurt Beamer theme by Till Tantau
+
+\usepackage{textpos}
+
+% Sets default font to ``Computer Modern Bright''
+\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+% You can also have look at ``Lato'':
+% \usepackage[default]{lato}
+% \usepackage[T1]{fontenc}
+
+\mode<presentation>
+
+% Colors around blocks
+\usecolortheme{orchid}
+
+\setbeamerfont{block title}{size={}}
+
+\mode
+<all>
+
+% Circles theme for items in itemize and enumerate
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+  
+% Default color is Old Brick (#96281B)
+\definecolor{oldbrick}{RGB}{150, 40, 27}
+\usecolortheme[named=oldbrick]{structure}
+
+% White transparent LRI logo on right-top corner
+\addtobeamertemplate{frametitle}{}{%
+  \begin{textblock*}{100mm}(\textwidth,-0.84cm)
+    \includegraphics[width=0.7cm]{img/lri_white.png}
+\end{textblock*}}
+
+% Defines command \currentname to return the current section name
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+% Removes all navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Defines the headline as : [CURRENT SECTION NAME]
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+      \quad \currentname
+    \end{beamercolorbox}}}
+
+% Defines the footline as : [PRESENTATION TITLE] filling space [CUR PAGE/TOT PAGES]
+\setbeamertemplate{footline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+      \quad \inserttitle \hfill \insertframenumber/\inserttotalframenumber \quad\quad
+    \end{beamercolorbox}}}
+
+% Defines command \recallsection to recall the current section with a table of contents
+\newcommand*{\recallsection}{\frame{\frametitle{Table of contents} \tableofcontents[currentsection]}}
